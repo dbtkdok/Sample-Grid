@@ -303,6 +303,9 @@ body a:hover {
     flex: auto;
     cursor: pointer;
   }
+.card:hover, .card:active, .card:focus {
+    background: aqua;
+}
   .card img {
     width: 100%;
     height: 100%;
