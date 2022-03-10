@@ -1,0 +1,377 @@
+<html>
+    <head>
+        <script src="/js/jquery-3.4.1.min.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+        <link href="/css/posMain.css" rel="stylesheet">
+        <script src="/js/posMain.js"></script>
+        <link rel="stylesheet" href="/tui-grid/tui-grid.css" />
+	    <script src="/tui-grid/tui-grid.js" charset="UTF-8"></script>
+        <script>
+            var grid = null;
+
+            $(document).ready(function(){
+	            fnInitGrid();
+                fnDeliveryInitGrid();
+            })
+
+            function fnInitGrid(){ 
+                const dataSource = {
+                    api: {
+                        readData: { url: "", method: 'GET', initParams: { }}
+                    },
+                    initialRequest: false
+                };	
+                
+                grid = new tui.Grid({
+                    el: document.getElementById('grid'),
+                    scrollX: true,
+                    scrollY: true,
+                    rowHeight : 27,
+                    minRowHeight :27,
+                    header: {
+                    height: 26
+                    },
+                    rowHeaders: ['checkbox','rowNum'],
+                    columns: [
+                    {
+                        header: '주문번호',
+                        name: 'privID',
+                        sortable: true
+                    },
+                    {
+                        header: '주문일시',
+                        name: 'privNM',
+                        sortable: true
+                    },
+                    {
+                        header: '주문타입',
+                        name: 'activeImg',
+                        sortable: true
+                    },
+                    {
+                        header: '경과시간',
+                        name: 'noActiveImg',
+                        sortable: true
+                    },
+                    {
+                        header: '주문채널',
+                        name: 'isRead',
+                        sortable: true
+                    },
+                    {
+                        header: '주문금액',
+                        name: 'dbSTS',
+                        sortable: true
+                    },
+                    {
+                        header: '주문상태',
+                        name: 'dbSTS2',
+                        sortable: true
+                    },
+                    {
+                        header: '<spring:message code="FIELD.PRIVUID" text="화면기능UID"/>',
+                        name: 'privUID',
+                        hidden : true
+                    }
+                    ],
+                    data : dataSource,   
+                    columnOptions: {
+                        resizable: true
+                    },
+                    bodyHeight : 650
+                });
+                
+                grid.refreshLayout();
+            }
+
+            function fnDeliveryInitGrid(){ 
+                const dataSource = {
+                    api: {
+                        readData: { url: "", method: 'GET', initParams: { }}
+                    },
+                    initialRequest: false
+                };	
+                
+                delivery_grid = new tui.Grid({
+                    el: document.getElementById('delivery_grid'),
+                    scrollX: true,
+                    scrollY: true,
+                    rowHeight : 27,
+                    minRowHeight :27,
+                    header: {
+                    height: 26
+                    },
+                    rowHeaders: ['checkbox','rowNum'],
+                    columns: [
+                    {
+                        header: '메뉴',
+                        name: 'privID',
+                        sortable: true
+                    },
+                    {
+                        header: '수량',
+                        name: 'privNM',
+                        sortable: true
+                    },
+                    {
+                        header: '금액',
+                        name: 'activeImg',
+                        sortable: true
+                    }
+                    ],
+                    data : dataSource,   
+                    columnOptions: {
+                        resizable: true
+                    },
+                    bodyHeight : 210
+                });
+                
+                grid.refreshLayout();
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+                <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                    Bootstrap 3
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-fw fa-folder"></i> Page one</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-fw fa-file-o"></i> Second page</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-fw fa-cog"></i> Third page</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-fw fa-bank"></i> Page four</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-fw fa-dropbox"></i> Page 5</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-fw fa-twitter"></i> Last page</a>
+                </li>
+                </ul>
+                
+            </nav>
+            <!-- /#sidebar-wrapper -->
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+                <ul id="logNavBar" class="nav navbar-nav navbar-left" style="display: block; margin-left: 90px;">
+                    
+                </ul>
+            </nav>
+
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+              <button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+                <span class="hamb-middle"></span>
+                <span class="hamb-bottom"></span>
+              </button>
+              <div class="container">
+                <div class="row">
+                    <div class="col-7 col-sm-7 orderList">
+                        <div class="row">
+                            <div class="col-12 col-sm-12"> 
+                                <h1 class="orderList_text">주문목록</h1>
+                            </div>
+                            <div class="col-12 col-sm-12"> 
+                                <div id="grid" style="width: 100%"></div>
+                            </div>
+                            <div class="col-12 col-sm-12"> 
+                                <div class="row" style="margin: 5px 0px;">
+                                    <div class="col-5 col-sm-5">
+                                        <div class="info-center">
+                                            가맹점전체 / 주문금액 : 0원
+                                        </div>
+                                    </div>
+                                    <div class="col-7 col-sm-7"> 
+                                        <div class="info-center">
+                                            주문건수 : 0건
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5 col-sm-5">
+                        <div class="row">
+                            <div class="col-12 col-sm-12">
+                                <div id="delivery_grid" style="width: 100%"></div>
+                            </div>
+                            <div class="col-12 col-sm-12">
+                                <table class="searchAM" style="width: 100%; margin-top: 8px;">
+                                    <colgroup>
+                                            <col width="120">
+                                            <col width="250">
+                                        </colgroup>
+                                    <tr> 
+                                        <th colspan="2" style="height: 25px; background-color: #2dddcc;"> 
+                                            <div style="display: flex; justify-content: space-between; margin:0 5px; font-size: 17px; color: rgba(255, 255, 255, 0.9);">
+                                                <span>후불(현금)결제</span>
+                                                <span>20,000</span>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    <tr> 
+                                        <th>주문일시</th>
+                                        <td style="height: 25px;">
+                                            <span class="search_span" id="custProdID"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>채널번호</th>
+                                        <td style="height: 25px;">
+                                            <span class="search_span" id="prodNM"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>주소</th>
+                                        <td style="height: 25px;">
+                                            <span class="search_span" id="spec"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>연락처</th>
+                                        <td style="height: 25px;">
+                                            <span class="search_span" id="modelNO"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>고객요청</th>
+                                        <td style="height: 25px;">
+                                            <span class="search_span" id="orderUnit"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>라이더요청</th>
+                                        <td style="height: 25px;">
+                                            <span class="search_span" id="makerNM"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>추가요청</th>
+                                        <td style="height: 25px;">
+                                            <span class="search_span" id="makerNM"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-12 col-sm-12"> 
+                                <div class="row">
+                                    <div class="col-12 col-sm-12">
+                                        <table class="searchAM" style="width: 100%; margin-top: 8px;">
+                                            <colgroup>
+                                                    <col width="120">
+                                                    <col width="250">
+                                                </colgroup>
+                                            <tr> 
+                                                <th colspan="2" style="height: 25px; background-color: #2dddcc;"> 
+                                                    <div style="display: flex; justify-content: space-between; margin:0 5px; font-size: 17px; color: rgba(255, 255, 255, 0.9);">
+                                                        <span>대행업체 이름</span>
+                                                        <span>대행완료</span>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr> 
+                                                <th>기사정보</th>
+                                                <td style="height: 25px;">
+                                                    <span class="search_span" id="custProdID"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>배달비</th>
+                                                <td style="height: 25px;">
+                                                    <span class="search_span" id="prodNM"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>배달거리</th>
+                                                <td style="height: 25px;">
+                                                    <span class="search_span" id="spec"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>픽업예정시간</th>
+                                                <td style="height: 25px;">
+                                                    <span class="search_span" id="modelNO"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-12 col-sm-12" style="text-align: center;">
+                                        <ul class="nav nav-tabs process-model more-icon-preocess" role="tablist">
+                                            <li role="presentation" class="visited">
+                                                <a aria-controls="discover" role="tab" data-toggle="tab"><i class="fa fa-search" aria-hidden="true"></i>
+                                                    <p>대행접수<br>
+                                                        (03-08 00:00)</p>
+                                                </a>
+                                            </li>
+                                            <li role="presentation" class="active">
+                                                <a aria-controls="strategy" role="tab" data-toggle="tab"><i class="fa fa-regular fa-motorcycle"></i>
+                                                    <p>배차완료<br>
+                                                        (03-08 00:00)</p>
+                                                </a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a aria-controls="optimization" role="tab" data-toggle="tab"><i class="fa fa-cube"></i>
+                                                    <p>픽업완료<br>
+                                                        (03-08 00:00)</p>
+                                                </a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a aria-controls="optimization" role="tab" data-toggle="tab"><i class="fa fa-truck"></i>
+                                                    <p>배송중<br>
+                                                        (03-08 00:00)
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a aria-controls="content" role="tab" data-toggle="tab"><i class="fa fa-user" aria-hidden="true"></i>
+                                                    <p>배달완료<br>
+                                                        (03-08 00:00)</p>
+                                                </a>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-12"> 
+                                <div class="row" style="margin: 5px 0px;">
+                                    <div class="col-5 col-sm-5">
+                                        <div class="info-center">
+                                            주문접수 : 0건<br>
+                                            주문취소 : 0건
+                                        </div>
+                                    </div>
+                                    <div class="col-7 col-sm-7"> 
+                                        <div class="info-center">
+                                            대행접수 : 0건<br>
+                                            배차 : 0건(배차지연 0건)<br>
+                                            픽업 : 0건(픽업지연 0건)<br>
+                                            배달 : 0건(배달지연 0건)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+    </body>
+</html>
