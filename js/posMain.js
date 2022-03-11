@@ -1,13 +1,13 @@
 $(document).ready(function () {
-  var trigger = $(".hamburger"),
+  var trigger = $(".cro_hme"),
     overlay = $(".overlay"),
     isClosed = false;
 
   trigger.click(function () {
-    hamburger_cross();
+    cro_hme_cross();
   });
 
-  function hamburger_cross() {
+  function cro_hme_cross() {
     if (isClosed == true) {
       overlay.hide();
       trigger.removeClass("is-open");
@@ -26,7 +26,6 @@ $(document).ready(function () {
   });
 
   $('#order_nav li').click(function () {
-    console.log(this);
     $('#order_nav li').removeClass();
 
     $(this).addClass("active");

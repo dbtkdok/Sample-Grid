@@ -180,9 +180,9 @@ html {
 
 
 /*-------------------------------*/
-/*       Hamburger-Cross         */
+/*       cro_hme-Cross         */
 /*-------------------------------*/
-.hamburger {
+.cro_hme {
   background: transparent;
   border: none;
   display: block;
@@ -193,16 +193,16 @@ html {
   width: 32px;
   z-index: 999;
 }
-.hamburger:hover {
+.cro_hme:hover {
   outline: none;
 }
-.hamburger:focus {
+.cro_hme:focus {
   outline: none;
 }
-.hamburger:active {
+.cro_hme:active {
   outline: none;
 }
-.hamburger.is-closed:before {
+.cro_hme.is-closed:before {
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-transition: all 0.35s ease-in-out;
   color: #ffffff;
@@ -214,65 +214,65 @@ html {
   text-align: center;
   width: 100px;
 }
-.hamburger.is-closed:hover before {
+.cro_hme.is-closed:hover before {
   -webkit-transform: translate3d(-100px, 0, 0);
   -webkit-transition: all 0.35s ease-in-out;
   display: block;
   opacity: 1;
 }
-.hamburger.is-closed:hover .hamb-top {
+.cro_hme.is-closed:hover .hamb-top {
   -webkit-transition: all 0.35s ease-in-out;
   top: 0;
 }
-.hamburger.is-closed:hover .hamb-bottom {
+.cro_hme.is-closed:hover .hamb-bottom {
   -webkit-transition: all 0.35s ease-in-out;
   bottom: 0;
 }
-.hamburger.is-closed .hamb-top {
+.cro_hme.is-closed .hamb-top {
   -webkit-transition: all 0.35s ease-in-out;
   background-color: rgba(255, 255, 255, 0.7);
   top: 5px;
 }
-.hamburger.is-closed .hamb-middle {
+.cro_hme.is-closed .hamb-middle {
   background-color: rgba(255, 255, 255, 0.7);
   margin-top: -2px;
   top: 50%;
 }
-.hamburger.is-closed .hamb-bottom {
+.cro_hme.is-closed .hamb-bottom {
   -webkit-transition: all 0.35s ease-in-out;
   background-color: rgba(255, 255, 255, 0.7);
   bottom: 5px;
 }
-.hamburger.is-closed .hamb-top,
-.hamburger.is-closed .hamb-middle,
-.hamburger.is-closed .hamb-bottom,
-.hamburger.is-open .hamb-top,
-.hamburger.is-open .hamb-middle,
-.hamburger.is-open .hamb-bottom {
+.cro_hme.is-closed .hamb-top,
+.cro_hme.is-closed .hamb-middle,
+.cro_hme.is-closed .hamb-bottom,
+.cro_hme.is-open .hamb-top,
+.cro_hme.is-open .hamb-middle,
+.cro_hme.is-open .hamb-bottom {
   height: 4px;
   left: 0;
   position: absolute;
   width: 100%;
 }
-.hamburger.is-open .hamb-top {
+.cro_hme.is-open .hamb-top {
   -webkit-transform: rotate(45deg);
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
   background-color: #fff;
   margin-top: -2px;
   top: 50%;
 }
-.hamburger.is-open .hamb-middle {
+.cro_hme.is-open .hamb-middle {
   background-color: #fff;
   display: none;
 }
-.hamburger.is-open .hamb-bottom {
+.cro_hme.is-open .hamb-bottom {
   -webkit-transform: rotate(-45deg);
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
   background-color: #fff;
   margin-top: -2px;
   top: 50%;
 }
-.hamburger.is-open:before {
+.cro_hme.is-open:before {
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-transition: all 0.35s ease-in-out;
   color: #ffffff;
@@ -284,7 +284,7 @@ html {
   text-align: center;
   width: 100px;
 }
-.hamburger.is-open:hover before {
+.cro_hme.is-open:hover before {
   -webkit-transform: translate3d(-100px, 0, 0);
   -webkit-transition: all 0.35s ease-in-out;
   display: block;
@@ -556,6 +556,24 @@ body a:hover {
   cursor: pointer;
   padding: 7px;
   font-size: 1.1vw;
+}
+
+.search_btn {
+  padding: 5px 10px; 
+  margin: 0 3px;
+  background-color: #fadf8b !important;
+  color: #646464 !important;
+  font-weight: bold;
+}
+
+.search_btn:focus, .search_btn:active {
+  box-shadow: inset 1px 1px 3px #000;
+  outline: 0px !important;
+  outline-offset: 0px !important;
+}
+
+.search_btn i {
+  margin-right: 3px;
 }
 
 .grid_tui {
