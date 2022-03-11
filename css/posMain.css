@@ -155,7 +155,7 @@ html {
   text-decoration: none;
 }
 .sidebar-nav > .sidebar-brand {
-  font-size: 20px;
+  font-size: 1.0vw;
   height: 65px;
   line-height: 44px;
 }
@@ -208,7 +208,7 @@ html {
   color: #ffffff;
   content: '';
   display: block;
-  font-size: 14px;
+  font-size: 0.8vw;
   line-height: 32px;
   opacity: 0;
   text-align: center;
@@ -278,7 +278,7 @@ html {
   color: #ffffff;
   content: '';
   display: block;
-  font-size: 14px;
+  font-size: 0.8vw;
   line-height: 32px;
   opacity: 0;
   text-align: center;
@@ -372,7 +372,7 @@ body a:hover {
     top: 20px;
     right: 20px;
     color: #fdd701;
-    font-size: 20px;
+    font-size: 1.0vw;
   }
   
   .card-text {
@@ -453,12 +453,12 @@ body a:hover {
     padding: 0px 0px;
 }
 .tui-grid-container {
-    font-size: 11px;
+    font-size: 0.7vw;
 }
 .tui-grid-table th {
 	background: #6ecebd;
   color: #fff;
-	font-size: 12px;
+	font-size: 0.7vw;
 	cursor: pointer;
 }
 
@@ -474,7 +474,7 @@ body a:hover {
     word-break: keep-all;
     min-width: 60px;
     color: #23395d;
-    font-size: 12px;
+    font-size: 0.7vw;
     font-weight:600;
     letter-spacing: -1px;
     border: 1px solid #ccc;
@@ -495,7 +495,7 @@ body a:hover {
   display: flex;
   justify-content: space-between;
   margin: 5px;
-  font-size: 17px;
+  font-size: 0.9vw;
   color: #fff;
   align-content: center;
   font-weight: bold;
@@ -503,8 +503,8 @@ body a:hover {
 }
 
 .btn_cut {
-  font-size: 14px;
-	border: 1px solid #b9b9b9;
+  font-size: 0.8vw;
+  border: 1px solid #b9b9b9;
 }
 
 .boxBtn-am{
@@ -548,15 +548,14 @@ body a:hover {
 }
 
 .searchButton {
-  width: 40px;
-  height: 36px;
   border: 1px solid #4a3123;
   background: #4a3123;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
-  font-size: 20px;
+  padding: 7px;
+  font-size: 1.1vw;
 }
 
 .grid_tui {
@@ -663,7 +662,7 @@ body a:hover {
     background: #f5f6f7;
     border: 2px solid #e5e5e5;
     line-height: 40px;
-    font-size: 18px;
+    font-size: 0.9vw;
     border-radius: 50%;
   }
   .process-model li.active i,
@@ -672,7 +671,7 @@ body a:hover {
     border-color: #6ecebd;
   }
   .process-model li p {
-    font-size: 10px;
+    font-size: 0.6vw;
     margin-top: 5px;
     margin-bottom: 0;
   }
@@ -690,7 +689,7 @@ body a:hover {
   
   @media screen and (max-width: 560px) {
     .more-icon-preocess.process-model li span {
-      font-size: 23px;
+      font-size: 1.5vw;
       height: 50px;
       line-height: 46px;
       width: 50px;
@@ -704,13 +703,13 @@ body a:hover {
       width: 16%;
     }
     .more-icon-preocess.process-model li span {
-      font-size: 16px;
+      font-size: 0.9vw;
       height: 35px;
       line-height: 32px;
       width: 35px;
     }
     .more-icon-preocess.process-model li p {
-      font-size: 8px;
+      font-size: 0.5vw;
     }
     .more-icon-preocess.process-model li::after {
       top: 18px;
