@@ -8,6 +8,7 @@
 	    <script src="./tui-grid/tui-grid.js" charset="UTF-8"></script>
         <script>
             var grid = null;
+            var delivery_grid = null;
 
             $(document).ready(function(){
 	            fnInitGrid();
@@ -87,7 +88,7 @@
                     },
                     bodyHeight : 665
                 });
-                
+                resizePage();
                 grid.refreshLayout();
             }
 
@@ -133,8 +134,19 @@
                     },
                     bodyHeight : 180
                 });
-                
+                resizePage();
                 grid.refreshLayout();
+            }
+
+            function resizePage() {
+                var tabHeight = resizePageCom();
+
+                if(grid != null || grid != undefined) {
+                    grid.setBodyHeight(tabHeight + 10);
+                }
+                if(delivery_grid != null || delivery_grid != undefined) {
+                    delivery_grid.setBodyHeight(tabHeight - 495);
+                }
             }
 
         </script>
@@ -219,7 +231,7 @@
                         </div>
                     </div>
                     <div class="col col-5 col-sm-5" style="padding: 0 3px;">
-                        <div class="row grid_tui">
+                        <div id="dtlGrid" class="row grid_tui">
                             <div class="col col-12 col-sm-12" style="margin-top: 3px;">
                                 <div id="delivery_grid" style="width: 100%"></div>
                             </div>

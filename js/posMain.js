@@ -45,3 +45,13 @@ $(function(){
     $curr.prevAll().addClass("visited");
   });
 });
+
+function resizePageCom() {
+  var reuslt = '';
+  var windowInH = window.innerHeight;
+  var navH = $('#mainNav').height();
+
+  reuslt = windowInH - navH - 200;
+
+  return reuslt
+}

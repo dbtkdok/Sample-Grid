@@ -11,14 +11,15 @@
     <link rel="stylesheet" href="./fullCalender/fullCalender.css"/>
     <link rel="stylesheet" href="./css/posCalender.css"/>
     <script>
+         var calendar = null;
         $(document).ready(function(){
             var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
+            calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
                 headerToolbar: {
                     left: 'prev,next,today'
                     ,center: 'title'
-                    ,right: 'dayGridMonth,listWeek'
+                    ,right: ''
                 },
                 eventStartEditable: false,
                 stickyHeaderDates: true,
@@ -29,8 +30,16 @@
                 eventClick: function(info) {}
             });
             calendar.render();
-            calendar.setOption('height', 800);
+            resizePage();
         })
+
+        function resizePage() {
+            var tabHeight = resizePageCom();
+            if(calendar != null || calendar != undefined) {
+                calendar.setOption('height', tabHeight + 150);
+            }
+        }
+        
     </script>
 </head>
 
@@ -85,7 +94,9 @@
 
             <div class="container">
                 <div class="col col-12 col-sm-12">
-                    <div id="calendar"></div>
+                    <div class="grid_tui" style="padding: 5px;">
+                        <div id="calendar"></div>
+                    </div>
                 </div>
             </div>
         </div>
