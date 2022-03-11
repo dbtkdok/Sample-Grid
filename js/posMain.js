@@ -25,8 +25,14 @@ $(document).ready(function () {
     $("#wrapper").toggleClass("toggled");
   });
 
-  
+  $('#order_nav li').click(function () {
+    console.log(this);
+    $('#order_nav li').removeClass();
+
+    $(this).addClass("active");
+  });
 });
+
 $(function(){
   $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 

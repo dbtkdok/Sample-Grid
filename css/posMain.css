@@ -160,7 +160,7 @@ html {
   line-height: 44px;
 }
 #mainNav {
-    background: #c62a5b;
+    background: #dc5a32;
 }
 .orderList {
     border-radius: 5px;
@@ -294,7 +294,7 @@ html {
 /* SOME DEMO STYLES - NOT REQUIRED */
 body,
 html {
-  background-color: #2b7a99;
+  background-color: #c6c6dd;
 }
 body h1,
 body h2,
@@ -392,23 +392,39 @@ body a:hover {
   }
 
   .info-center {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     display: flex;
     padding: 0 10px;
     text-align: inherit;
     color: white;
-    background: rgba(0, 0, 0, 0.3);
     text-shadow: 1px 1px 10px rgb(0 0 0 / 20%);
-    font-size: 15px;
-    height: 90px;
+    font-size: 0.7vw;
+    height: 50px;
     font-weight: bold;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
   }
+
+.footer_cnt {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  position: fixed;
+  z-index: 9999;
+  background: #1a1a1a;
+  bottom: 0;
+  right: 0;
+}
+
+.col {
+  padding : 0 5px;
+}
+
+#logNavBar {
+  display: block; 
+  margin-left: 90px;
+}
 
 /* grid style */
 .astar{
@@ -439,9 +455,15 @@ body a:hover {
     font-size: 11px;
 }
 .tui-grid-table th {
-	background: #e2effc;
+	background: #6ecebd;
+  color: #fff;
 	font-size: 12px;
 	cursor: pointer;
+}
+
+.searchAM {
+  width: 100%; 
+  margin-top: 8px;
 }
 
 .searchAM th {
@@ -462,6 +484,86 @@ body a:hover {
     word-break: keep-all;
     background: #fff;
 } 
+
+.grid_header {
+  height: 25px; 
+  background-color: #6ecebd !important;
+}
+
+.grid_header_flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  font-size: 17px;
+  color: #fff;
+  align-content: center;
+  font-weight: bold;
+  text-shadow: 3px 3px 10px rgb(0 0 0 / 20%);
+}
+
+.btn_cut {
+  font-size: 14px;
+	border: 1px solid #b9b9b9;
+}
+
+.boxBtn-am{
+  padding: 0.5rem 1.75rem;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  margin: 5px 0 0;
+  justify-content: space-between;
+}
+
+.search_tab_box {
+  display: flex;
+  align-items: center;
+  margin-top: -5px;
+}
+
+.nav-tabs>li>a {
+  min-width: 80px;
+  text-align: center;
+}
+
+.nav-tabs {
+  border : 0;
+}
+
+.searchTerm {
+  border: 3px solid #4a3123;
+  border-right: none;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #4a3123;
+  background: #4a3123;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.grid_tui {
+  border: 1px solid #000;
+  margin: 3px 0px;
+  border-radius: 8px;
+  background: #6768ab;
+}
 
 /* process bar css */
 .design-process-section .text-align-center {
@@ -493,7 +595,7 @@ body a:hover {
     padding: 0;
     position: relative;
     max-width: 600px;
-    margin: 15px auto 8px;
+    margin: 10px auto 5px;
     border: none;
     z-index: 0;
   }
@@ -505,13 +607,13 @@ body a:hover {
     height: 4px;
     margin: 0 auto;
     position: absolute;
-    right: -30px;
-    top: 33px;
+    right: -34px;
+    top: 22px;
     width: 85%;
     z-index: -1;
   }
   .process-model li.visited::after {
-    background: #57b87b;
+    background: #6ecebd;
   }
   .process-model li:last-child::after {
     width: 0;
@@ -537,7 +639,7 @@ body a:hover {
   }
   .process-model li.active,
   .process-model li.visited {
-    color: #57b87b;
+    color: #6ecebd;
   }
   .process-model li.active a,
   .process-model li.active a:hover,
@@ -545,7 +647,7 @@ body a:hover {
   .process-model li.visited a,
   .process-model li.visited a:hover,
   .process-model li.visited a:focus {
-    color: #57b87b;
+    color: #6ecebd;
   }
   .process-model li.active p,
   .process-model li.visited p {
@@ -553,24 +655,25 @@ body a:hover {
   }
   .process-model li i {
     display: block;
-    height: 68px;
-    width: 68px;
+    height: 45px;
+    width: 45px;
     text-align: center;
     margin: 0 auto;
     background: #f5f6f7;
     border: 2px solid #e5e5e5;
-    line-height: 65px;
-    font-size: 30px;
+    line-height: 40px;
+    font-size: 18px;
     border-radius: 50%;
   }
   .process-model li.active i,
   .process-model li.visited i {
     background: #fff;
-    border-color: #57b87b;
+    border-color: #6ecebd;
   }
   .process-model li p {
-    font-size: 14px;
-    margin-top: 11px;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-bottom: 0;
   }
   .process-model.contact-us-tab li.visited a,
   .process-model.contact-us-tab li.visited p {
